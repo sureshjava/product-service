@@ -1,0 +1,26 @@
+
+server:
+  port: 8080
+spring:
+  data:
+    mongodb: 
+      uri: mongodb+srv://admin:Password123@microservice.5oi59xf.mongodb.net/?retryWrites=true&w=majority
+      database: productdb
+  application:
+    name: product
+  config:
+    import:
+    - configserver:http://localhost:9296
+---
+logging:
+  file: 
+   name: /application-debug.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: ERROR
+   
+    
+
+     
